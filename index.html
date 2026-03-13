@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Betify x Suchtyz | Exklusiver 100% Freebet Bonus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --green:#1ED760;
+  --gold:#FFD700;
+  --dark:#0a0a0a;
+  --card:#161616;
+  --card-border:#2a2a2a;
+  --white:#f5f5f5;
+  --gray:#999;
+}
+html{scroll-behavior:smooth}
+body{
+  background:var(--dark);
+  color:var(--white);
+  font-family:'Outfit',sans-serif;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ======== HALFTONE TEXTURE OVERLAY ======== */
+body::before{
+  content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
+  background:radial-gradient(circle 1px,transparent 1px,transparent) 0 0 / 4px 4px;
+  opacity:.03;
+}
+
+/* ======== FLOATING MONEY PARTICLES ======== */
+.money-float{
+  position:fixed;z-index:0;pointer-events:none;
+  font-size:clamp(1.2rem,3vw,2rem);
+  animation:moneyDrift linear infinite;
+  opacity:0;
+}
+@keyframes moneyDrift{
+  0%{transform:translateY(110vh) rotate(0deg);opacity:0}
+  10%{opacity:.6}
+  90%{opacity:.6}
+  100%{transform:translateY(-10vh) rotate(720deg);opacity:0}
+}
+
+/* ======== TOP BAR ======== */
+.topbar{
+  position:sticky;top:0;z-index:100;
+  display:flex;align-items:center;justify-content:center;gap:clamp(.8rem,3vw,2rem);
+  padding:1rem 2rem;
+  background:rgba(10,10,10,.85);
+  backdrop-filter:blur(20px);
+  border-bottom:2px solid var(--card-border);
+}
+.topbar svg{height:28px;width:auto;flex-shrink:0}
+.topbar-x{
+  font-family:'Bangers',cursive;font-size:1.6rem;
+  color:var(--gold);
+  text-shadow:0 0 20px rgba(255,215,0,.4);
+}
+.topbar .suchtyz-logo{
+  height:48px;width:auto;flex-shrink:0;
+  filter:brightness(1.1);
+}
+
+/* ======== GLITCH TEXT ======== */
+.glitch{
+  position:relative;display:inline-block;
+  font-family:'Bangers',cursive;
+  color:var(--white);
+}
+.glitch::before,.glitch::after{
+  content:attr(data-text);
+  position:absolute;top:0;left:0;right:0;
+  overflow:hidden;
+  color:var(--white);
+}
+.glitch::before{
+  animation:glitch-1 2s infinite linear;
+  text-shadow:2px 0 var(--green);
+  clip-path:inset(0 0 65% 0);
+}
+.glitch::after{
+  animation:glitch-2 2s infinite linear;
+  text-shadow:-2px 0 var(--gold);
+  clip-path:inset(65% 0 0 0);
+}
+@keyframes glitch-1{
+  0%,100%{transform:translate(0)}
+  20%{transform:translate(-3px,2px)}
+  40%{transform:translate(3px,-1px)}
+  60%{transform:translate(-2px,1px)}
+  80%{transform:translate(2px,-2px)}
+}
+@keyframes glitch-2{
+  0%,100%{transform:translate(0)}
+  20%{transform:translate(3px,-1px)}
+  40%{transform:translate(-3px,2px)}
+  60%{transform:translate(2px,-1px)}
+  80%{transform:translate(-2px,2px)}
+}
+
+/* ======== HERO ======== */
+.hero{
+  position:relative;
+  min-height:100vh;min-height:100svh;
+  display:flex;align-items:center;
+  padding:6rem 2rem 4rem;
+  overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 50%,rgba(30,215,96,.08),transparent),
+    radial-gradient(ellipse 60% 80% at 80% 30%,rgba(255,215,0,.06),transparent),
+    linear-gradient(180deg,var(--dark) 0%,#0d0d0d 100%);
+  z-index:0;
+}
+/* Comic speed lines */
+.hero::after{
+  content:'';position:absolute;
+  top:50%;left:50%;width:200%;height:200%;
+  transform:translate(-50%,-50%);
+  background:repeating-conic-gradient(
+    rgba(255,255,255,.01) 0deg,transparent 1deg,transparent 10deg
+  );
+  z-index:0;
+  animation:speedSpin 60s linear infinite;
+}
+@keyframes speedSpin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+
+.hero-inner{
+  position:relative;z-index:2;
+  max-width:1200px;margin:0 auto;width:100%;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:3rem;
+  align-items:center;
+}
+
+/* Left column - text */
+.hero-text{display:flex;flex-direction:column;gap:1.5rem}
+
+.badge{
+  display:inline-flex;align-items:center;gap:.5rem;
+  width:fit-content;
+  padding:.4rem 1rem;
+  background:rgba(30,215,96,.1);
+  border:2px solid var(--green);
+  border-radius:100px;
+  font-family:'Bangers',cursive;
+  font-size:clamp(.8rem,2vw,1rem);
+  letter-spacing:2px;
+  color:var(--green);
+  animation:badgePulse 2s ease-in-out infinite;
+}
+.badge::before{
+  content:'';width:8px;height:8px;
+  background:var(--green);border-radius:50%;
+  animation:dot-blink 1s infinite;
+}
+@keyframes dot-blink{0%,100%{opacity:1}50%{opacity:.3}}
+@keyframes badgePulse{0%,100%{box-shadow:0 0 0 0 rgba(30,215,96,.3)}50%{box-shadow:0 0 0 8px rgba(30,215,96,0)}}
+
+.hero-headline{
+  font-family:'Bangers',cursive;
+  font-size:clamp(3rem,8vw,6.5rem);
+  line-height:.9;
+  letter-spacing:3px;
+  color:var(--white);
+  text-shadow:4px 4px 0 rgba(0,0,0,.5);
+}
+.hero-headline .accent{
+  color:var(--gold);
+  text-shadow:4px 4px 0 rgba(0,0,0,.5),0 0 40px rgba(255,215,0,.3);
+  display:block;
+}
+
+/* Starburst bonus amount */
+.bonus-burst{
+  position:relative;
+  width:fit-content;
+  padding:1rem 2.5rem;
+  background:var(--green);
+  clip-path:polygon(
+    5% 15%,15% 0%,25% 12%,38% 2%,50% 15%,62% 2%,75% 12%,85% 0%,95% 15%,
+    100% 30%,92% 45%,100% 60%,95% 75%,100% 85%,88% 95%,75% 88%,60% 98%,
+    50% 88%,38% 98%,25% 88%,12% 95%,2% 85%,8% 70%,0% 55%,5% 40%,0% 28%
+  );
+  animation:burstPulse 3s ease-in-out infinite;
+}
+@keyframes burstPulse{
+  0%,100%{transform:scale(1) rotate(0deg)}
+  50%{transform:scale(1.05) rotate(1deg)}
+}
+.bonus-burst span{
+  font-family:'Bangers',cursive;
+  font-size:clamp(1.3rem,4vw,2.2rem);
+  color:var(--dark);
+  letter-spacing:2px;
+  white-space:nowrap;
+}
+
+.hero-sub{
+  font-size:clamp(.95rem,2vw,1.15rem);
+  color:var(--gray);
+  line-height:1.6;
+  max-width:480px;
+}
+
+/* Countdown */
+.countdown-wrap{
+  display:flex;flex-direction:column;gap:.5rem;
+}
+.countdown-label{
+  font-family:'Bangers',cursive;
+  font-size:clamp(.9rem,2vw,1.1rem);
+  color:#ff4444;
+  letter-spacing:3px;
+  display:flex;align-items:center;gap:.5rem;
+}
+.countdown-label::before{content:'';display:inline-block;width:10px;height:10px;background:#ff4444;border-radius:50%;animation:dot-blink 1s infinite}
+.countdown{
+  display:flex;gap:.6rem;
+}
+.countdown-unit{
+  display:flex;flex-direction:column;align-items:center;
+  background:var(--card);
+  border:3px solid var(--card-border);
+  border-radius:12px;
+  padding:.8rem 1rem;
+  min-width:70px;
+  position:relative;
+  overflow:hidden;
+}
+.countdown-unit::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:50%;
+  background:rgba(255,255,255,.03);
+}
+.countdown-unit .num{
+  font-family:'Bangers',cursive;
+  font-size:clamp(1.8rem,5vw,2.8rem);
+  color:var(--gold);
+  text-shadow:0 0 20px rgba(255,215,0,.3);
+  line-height:1;
+}
+.countdown-unit .lbl{
+  font-size:.65rem;letter-spacing:2px;
+  color:var(--gray);text-transform:uppercase;
+  margin-top:.3rem;
+}
+.countdown-sep{
+  font-family:'Bangers',cursive;
+  font-size:2rem;color:var(--gray);
+  align-self:center;
+  animation:blink-sep 1s step-end infinite;
+}
+@keyframes blink-sep{0%,100%{opacity:1}50%{opacity:.2}}
+
+/* CTA Button */
+.cta-btn{
+  display:inline-flex;align-items:center;gap:.8rem;
+  width:fit-content;
+  padding:1rem 2.5rem;
+  background:var(--green);
+  color:var(--dark);
+  font-family:'Bangers',cursive;
+  font-size:clamp(1.2rem,3vw,1.6rem);
+  letter-spacing:3px;
+  text-decoration:none;
+  border:none;border-radius:14px;
+  cursor:pointer;
+  position:relative;
+  overflow:hidden;
+  transition:transform .2s,box-shadow .2s;
+  box-shadow:0 0 0 0 rgba(30,215,96,.4),0 8px 30px rgba(30,215,96,.2);
+  animation:ctaGlow 2s ease-in-out infinite;
+}
+@keyframes ctaGlow{
+  0%,100%{box-shadow:0 0 0 0 rgba(30,215,96,.4),0 8px 30px rgba(30,215,96,.2)}
+  50%{box-shadow:0 0 0 8px rgba(30,215,96,0),0 8px 40px rgba(30,215,96,.35)}
+}
+.cta-btn::before{
+  content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);
+  transition:left .5s;
+}
+.cta-btn:hover::before{left:100%}
+.cta-btn:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 0 0 0 transparent,0 12px 40px rgba(30,215,96,.35)}
+.cta-btn:active{transform:translateY(0) scale(.98)}
+.cta-btn svg{width:20px;height:20px;fill:var(--dark)}
+
+/* Right column - hero image */
+.hero-image{
+  position:relative;
+  display:flex;justify-content:center;align-items:center;
+}
+.hero-image img{
+  width:100%;max-width:500px;
+  border-radius:24px;
+  border:4px solid var(--card-border);
+  box-shadow:
+    0 0 60px rgba(30,215,96,.15),
+    0 20px 60px rgba(0,0,0,.5),
+    inset 0 0 0 2px rgba(255,255,255,.05);
+  animation:heroFloat 4s ease-in-out infinite;
+  position:relative;z-index:1;
+}
+@keyframes heroFloat{
+  0%,100%{transform:translateY(0) rotate(0deg)}
+  50%{transform:translateY(-15px) rotate(1deg)}
+}
+/* Decorative ring behind image */
+.hero-image::before{
+  content:'';position:absolute;
+  width:110%;height:110%;
+  border:3px dashed rgba(30,215,96,.15);
+  border-radius:50%;
+  animation:ringRotate 20s linear infinite;
+}
+@keyframes ringRotate{to{transform:rotate(360deg)}}
+.hero-image::after{
+  content:'100€';position:absolute;
+  top:-10px;right:10px;z-index:3;
+  font-family:'Bangers',cursive;
+  font-size:2rem;
+  color:var(--dark);
+  background:var(--gold);
+  padding:.3rem 1rem;
+  border-radius:10px;
+  transform:rotate(12deg);
+  box-shadow:0 4px 20px rgba(255,215,0,.4);
+  animation:tagBounce 2s ease-in-out infinite;
+}
+@keyframes tagBounce{
+  0%,100%{transform:rotate(12deg) scale(1)}
+  50%{transform:rotate(12deg) scale(1.1)}
+}
+
+/* ======== STEPS SECTION ======== */
+.steps{
+  position:relative;z-index:2;
+  padding:6rem 2rem;
+  background:linear-gradient(180deg,var(--dark) 0%,#0e0e0e 50%,var(--dark) 100%);
+}
+.steps-inner{max-width:1000px;margin:0 auto}
+.section-title{
+  font-family:'Bangers',cursive;
+  font-size:clamp(2rem,5vw,3.5rem);
+  text-align:center;
+  letter-spacing:4px;
+  margin-bottom:1rem;
+  color:var(--white);
+  text-shadow:3px 3px 0 rgba(0,0,0,.5);
+}
+.section-subtitle{
+  text-align:center;
+  color:var(--gray);
+  font-size:1rem;
+  margin-bottom:3.5rem;
+  max-width:500px;
+  margin-left:auto;margin-right:auto;
+}
+
+.steps-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1.5rem;
+}
+.step-card{
+  background:var(--card);
+  border:3px solid var(--card-border);
+  border-radius:20px;
+  padding:2rem 1.5rem;
+  position:relative;
+  overflow:hidden;
+  transition:transform .3s,border-color .3s,box-shadow .3s;
+}
+.step-card:hover{
+  transform:translateY(-8px);
+  border-color:var(--green);
+  box-shadow:0 12px 40px rgba(30,215,96,.12);
+}
+/* Comic-style diagonal stripe in corner */
+.step-card::before{
+  content:'';position:absolute;top:0;right:0;
+  width:80px;height:80px;
+  background:repeating-linear-gradient(
+    -45deg,
+    transparent,transparent 4px,
+    rgba(30,215,96,.06) 4px,rgba(30,215,96,.06) 8px
+  );
+  border-radius:0 17px 0 0;
+}
+.step-num{
+  font-family:'Bangers',cursive;
+  font-size:3.5rem;
+  line-height:1;
+  color:var(--green);
+  opacity:.25;
+  position:absolute;top:.5rem;right:1rem;
+}
+.step-icon{
+  width:56px;height:56px;
+  background:rgba(30,215,96,.1);
+  border:2px solid rgba(30,215,96,.2);
+  border-radius:16px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.6rem;
+  margin-bottom:1.2rem;
+}
+.step-title{
+  font-family:'Bangers',cursive;
+  font-size:clamp(1.3rem,3vw,1.7rem);
+  letter-spacing:2px;
+  margin-bottom:.6rem;
+  color:var(--white);
+}
+.step-desc{
+  color:var(--gray);
+  font-size:.95rem;
+  line-height:1.6;
+}
+.step-code{
+  display:inline-block;
+  margin-top:.8rem;
+  padding:.4rem 1rem;
+  background:rgba(255,215,0,.08);
+  border:2px solid var(--gold);
+  border-radius:8px;
+  font-family:'Bangers',cursive;
+  font-size:1.3rem;
+  letter-spacing:4px;
+  color:var(--gold);
+}
+/* Connector line between steps */
+.step-connector{
+  display:flex;align-items:center;justify-content:center;
+  color:var(--green);opacity:.3;font-size:1.5rem;
+}
+
+/* ======== BOTTOM CTA ======== */
+.bottom-cta{
+  position:relative;z-index:2;
+  padding:5rem 2rem;
+  overflow:hidden;
+}
+.bottom-cta::before{
+  content:'';position:absolute;inset:0;
+  background:
+    linear-gradient(135deg,rgba(30,215,96,.06) 0%,transparent 50%,rgba(255,215,0,.04) 100%);
+}
+.bottom-cta-inner{
+  position:relative;z-index:1;
+  max-width:1100px;margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:3rem;
+  align-items:center;
+}
+.bottom-cta-text{display:flex;flex-direction:column;gap:1.5rem}
+.bottom-cta-text .section-title{text-align:left}
+.bottom-cta-text p{
+  color:var(--gray);
+  font-size:1.05rem;
+  line-height:1.7;
+  max-width:450px;
+}
+.bottom-cta-image{
+  display:flex;justify-content:center;
+}
+.bottom-cta-image img{
+  width:100%;max-width:550px;
+  border-radius:20px;
+  border:3px solid var(--card-border);
+  box-shadow:0 20px 60px rgba(0,0,0,.5);
+  transition:transform .4s;
+}
+.bottom-cta-image img:hover{transform:scale(1.03)}
+
+/* ======== FOOTER ======== */
+footer{
+  position:relative;z-index:2;
+  text-align:center;
+  padding:3rem 2rem;
+  border-top:2px solid var(--card-border);
+  background:rgba(0,0,0,.3);
+}
+footer p{
+  color:var(--gray);
+  font-size:.8rem;
+  line-height:1.7;
+  max-width:700px;
+  margin:0 auto;
+}
+footer .age-badge{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:36px;height:36px;
+  border:2px solid #ff4444;
+  border-radius:50%;
+  font-family:'Bangers',cursive;
+  font-size:.9rem;
+  color:#ff4444;
+  margin-bottom:.8rem;
+}
+
+/* ======== ANIMATIONS ON SCROLL ======== */
+.reveal{
+  opacity:0;transform:translateY(40px);
+  transition:opacity .7s ease,transform .7s ease;
+}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal:nth-child(2){transition-delay:.1s}
+.reveal:nth-child(3){transition-delay:.2s}
+/* Fallback: ensure sections become visible even if JS observer fails */
+@keyframes revealFallback{to{opacity:1;transform:none}}
+.reveal{animation:revealFallback .7s ease forwards 2s}
+.reveal.visible{animation:none}
+
+/* ======== RESPONSIVE ======== */
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;text-align:center}
+  .hero-text{align-items:center}
+  .hero-image{order:-1;margin-bottom:1rem}
+  .hero-image img{max-width:300px}
+  .hero-image::after{right:-5px;top:-5px;font-size:1.5rem}
+  .hero-sub{margin:0 auto}
+  .badge{margin:0 auto}
+  .countdown{justify-content:center}
+  .countdown-label{justify-content:center}
+  .cta-btn{margin:0 auto}
+  .steps-grid{grid-template-columns:1fr}
+  .step-connector{transform:rotate(90deg)}
+  .bottom-cta-inner{grid-template-columns:1fr;text-align:center}
+  .bottom-cta-text{align-items:center}
+  .bottom-cta-text .section-title{text-align:center}
+  .bottom-cta-text p{margin:0 auto}
+}
+@media(max-width:480px){
+  .topbar{padding:.8rem 1rem;gap:.5rem}
+  .topbar svg{height:22px}
+  .topbar .suchtyz-logo{height:36px}
+  .hero{padding:5rem 1.2rem 3rem}
+  .countdown-unit{min-width:58px;padding:.6rem .7rem}
+  .countdown-unit .num{font-size:1.6rem}
+  .steps{padding:4rem 1.2rem}
+  .bottom-cta{padding:3rem 1.2rem}
+  .bonus-burst{padding:.8rem 2rem}
+}
+</style>
+</head>
+<body>
+
+<!-- FLOATING MONEY PARTICLES (generated by JS) -->
+
+<!-- TOP BAR -->
+<nav class="topbar">
+  <svg width="144" height="36" viewBox="0 0 144 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M19.7213 2.30554C19.8888 1.35941 20.7111 0.669922 21.672 0.669922H29.7913C31.0236 0.669922 31.9569 1.78301 31.742 2.99645L30.305 11.1108C30.1375 12.0569 29.3151 12.7464 28.3543 12.7464H20.235C19.0027 12.7464 18.0694 11.6333 18.2843 10.4199L19.7213 2.30554ZM17.2342 16.3949C17.4017 15.4488 18.224 14.7593 19.1849 14.7593H27.3041C28.5365 14.7593 29.4698 15.8724 29.2549 17.0858L27.8179 25.2002C27.6503 26.1463 26.828 26.8358 25.8672 26.8358H17.7479C16.5156 26.8358 15.5823 25.7227 15.7972 24.5093L17.2342 16.3949ZM4.99427 14.7593C4.03342 14.7593 3.2111 15.4488 3.04355 16.3949L1.60658 24.5093C1.39169 25.7227 2.32499 26.8358 3.5573 26.8358H11.6766C12.6374 26.8358 13.4597 26.1463 13.6273 25.2002L15.0643 17.0858C15.2791 15.8724 14.3459 14.7593 13.1135 14.7593H4.99427Z" fill="#1ED760"/>
+    <path d="M34.2053 0.672897H47.5495C50.0805 0.672897 52.0727 1.23364 53.5262 2.35514C54.9796 3.45171 55.7063 4.9595 55.7063 6.8785C55.7063 8.2243 55.3555 9.44548 54.6539 10.5421C53.9522 11.6386 52.9623 12.5109 51.6843 13.1589C52.5614 13.6573 53.238 14.3427 53.7141 15.215C54.2153 16.0623 54.4659 17.0467 54.4659 18.1682C54.4659 19.9128 54.0148 21.4455 53.1127 22.7664C52.2106 24.0623 50.9325 25.0717 49.2786 25.7944C47.6497 26.4922 45.7452 26.8411 43.565 26.8411H29.5861L34.2053 0.672897ZM44.2416 21.0841C45.2691 21.0841 46.071 20.8349 46.6473 20.3364C47.2488 19.8131 47.5495 19.1028 47.5495 18.2056C47.5495 17.5576 47.324 17.0467 46.8729 16.6729C46.4469 16.2741 45.8705 16.0748 45.1438 16.0748H38.5281L37.6369 21.0841H44.2416ZM45.8204 10.6168C46.6724 10.6168 47.349 10.405 47.8502 9.98131C48.3514 9.53271 48.602 8.94704 48.602 8.2243C48.602 7.65109 48.414 7.20249 48.0382 6.8785C47.6873 6.52959 47.1987 6.35514 46.5722 6.35514H40.2364L39.4835 10.6168H45.8204Z" fill="white"/>
+    <path d="M66.1021 27.2523C64.1725 27.2523 62.4936 26.9284 61.0652 26.2804C59.6618 25.6075 58.5843 24.6729 57.8325 23.4766C57.0807 22.2804 56.7048 20.8847 56.7048 19.2897C56.7048 18.6417 56.7549 18.0312 56.8552 17.4579C57.3814 14.4424 58.672 12.1122 60.7269 10.4673C62.8068 8.79751 65.438 7.96262 68.6206 7.96262C70.3998 7.96262 71.9535 8.27415 73.2817 8.8972C74.6098 9.49533 75.6247 10.3551 76.3264 11.4766C77.028 12.5732 77.3789 13.8442 77.3789 15.2897C77.3789 16.5857 77.0782 17.9813 76.4767 19.4766H63.5836C63.7089 20.1994 64.1224 20.785 64.8241 21.2336C65.5257 21.6822 66.4154 21.9065 67.4929 21.9065C69.0717 21.9065 70.6379 21.4081 72.1916 20.4112L74.9732 24.4486C73.7453 25.4455 72.4296 26.1682 71.0263 26.6168C69.623 27.0405 67.9816 27.2523 66.1021 27.2523ZM70.8384 16.0748C70.9135 15.8006 70.9511 15.5514 70.9511 15.3271C70.9511 14.6542 70.688 14.1184 70.1618 13.7196C69.6355 13.3209 68.8837 13.1215 67.9064 13.1215C66.0269 13.1215 64.7489 14.0561 64.0723 15.9252L64.0347 16.0748H70.8384Z" fill="white"/>
+    <path d="M86.5465 27.2897C84.6921 27.2897 83.2763 26.866 82.299 26.0187C81.3216 25.1464 80.833 23.8879 80.833 22.243C80.833 21.6449 80.8831 21.0841 80.9833 20.5607L82.1904 13.6822H79.2166L80.1564 8.37383H83.1259L83.9153 3.92523L90.9069 3.17757L89.9672 8.37383H94.1771L93.2394 13.6822H89.0274L88.0125 19.4766C87.9624 19.8255 87.9373 20.0498 87.9373 20.1495C87.9373 21.0218 88.4385 21.4579 89.4409 21.4579C90.1175 21.4579 90.8317 21.296 91.5835 20.972L92.1849 26.0561C90.531 26.8785 88.6515 27.2897 86.5465 27.2897Z" fill="white"/>
+    <path d="M97.5511 8.37383H104.505L101.249 26.8411H94.299L97.5511 8.37383ZM98.0397 3.36449C98.1901 2.41745 98.6787 1.61994 99.5057 0.971964C100.333 0.323988 101.285 0 102.362 0C103.415 0 104.242 0.261683 104.843 0.785048C105.47 1.30841 105.783 2.03115 105.783 2.95327C105.783 3.12773 105.758 3.38941 105.708 3.73832C105.533 4.68536 105.031 5.48287 104.204 6.13084C103.402 6.75389 102.463 7.06542 101.385 7.06542C100.333 7.06542 99.5057 6.80374 98.9043 6.28038C98.3028 5.73209 98.0021 4.98443 98.0021 4.03738C98.0021 3.73832 98.0147 3.51402 98.0397 3.36449Z" fill="white"/>
+    <path d="M110.523 7.06542C110.924 4.82243 111.901 3.09034 113.455 1.86916C115.033 0.623054 117.038 0 119.469 0C120.697 0 121.774 0.174454 122.701 0.523364C123.654 0.872274 124.418 1.37072 124.994 2.01869L122.175 6.13084C121.9 5.8567 121.561 5.64486 121.16 5.49533C120.784 5.34579 120.396 5.27103 119.995 5.27103C119.293 5.27103 118.717 5.49533 118.266 5.94393C117.815 6.3676 117.505 6.98154 117.355 7.80397L117.251 8.37383H122.029L121.085 13.7196H116.311L113.998 26.8411H107.041L109.357 13.7196H106.234L107.177 8.37383H110.297L110.523 7.06542Z" fill="white"/>
+    <path d="M128.893 36C127.339 36 125.886 35.8006 124.532 35.4019C123.204 35.028 121.876 34.4299 120.548 33.6075L123.706 28.8972C124.507 29.3956 125.397 29.7819 126.374 30.0561C127.352 30.3551 128.304 30.5047 129.231 30.5047C130.66 30.5047 131.75 30.1807 132.501 29.5327C133.278 28.8847 133.792 27.8505 134.043 26.4299L134.306 24.9346C132.652 26.2305 130.697 26.8785 128.442 26.8785C126.462 26.8785 124.946 26.3676 123.893 25.3458C122.866 24.324 122.352 22.8411 122.352 20.8972C122.352 20.1246 122.447 19.3146 122.598 18.4673L124.382 8.37383H131.326L129.645 17.9439C129.569 18.3178 129.532 18.6791 129.532 19.028C129.532 19.7757 129.707 20.3614 130.058 20.785C130.409 21.1838 130.91 21.3832 131.562 21.3832C132.564 21.3832 133.404 21.0592 134.08 20.4112C134.757 19.7632 135.204 18.8536 135.405 17.6822L137.05 8.37383H144.001L140.658 27.1402C140.107 30.1807 138.879 32.4112 136.975 33.8318C135.095 35.2773 132.401 36 128.893 36Z" fill="white"/>
+  </svg>
+
+  <span class="topbar-x">X</span>
+
+  <img src="ressources/suchtyz-logo.jpg" alt="Suchtyz" class="suchtyz-logo">
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="badge">LIMITIERTE AKTION</div>
+      <h1 class="hero-headline">
+        EXKLUSIVER
+        <span class="accent">BONUS</span>
+      </h1>
+      <div class="bonus-burst">
+        <span>100% FREEBET BIS ZU 100&euro;</span>
+      </div>
+      <p class="hero-sub">
+        Exklusiv f&uuml;r alle <strong class="glitch" data-text="SUCHTYZ" style="color:var(--green)">SUCHTYZ</strong> Mitglieder.
+        Zahle ein und erhalte deinen Betrag als Freebet &mdash; bis zu 100&euro; geschenkt!
+      </p>
+      <div class="countdown-wrap">
+        <div class="countdown-label">ANGEBOT ENDET IN</div>
+        <div class="countdown" id="countdown">
+          <div class="countdown-unit"><span class="num" id="cd-h">48</span><span class="lbl">Stunden</span></div>
+          <span class="countdown-sep">:</span>
+          <div class="countdown-unit"><span class="num" id="cd-m">00</span><span class="lbl">Minuten</span></div>
+          <span class="countdown-sep">:</span>
+          <div class="countdown-unit"><span class="num" id="cd-s">00</span><span class="lbl">Sekunden</span></div>
+        </div>
+      </div>
+      <a href="#" class="cta-btn">
+        JETZT BONUS SICHERN
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="hero-image">
+      <img src="ressources/suchtyz-character.jpg" alt="Suchtyz Charakter">
+    </div>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section class="steps" id="steps">
+  <div class="steps-inner">
+    <h2 class="section-title reveal">SO FUNKTIONIERT'S</h2>
+    <p class="section-subtitle reveal">In nur 3 einfachen Schritten zu deinem Freebet Bonus</p>
+    <div class="steps-grid">
+      <div class="step-card reveal">
+        <span class="step-num">01</span>
+        <div class="step-icon">&#128176;</div>
+        <h3 class="step-title">Einzahlen</h3>
+        <p class="step-desc">Zahle deinen gew&uuml;nschten Betrag ein &mdash; bis zu 100&euro;. Je mehr du einzahlst, desto h&ouml;her dein Freebet!</p>
+      </div>
+      <div class="step-card reveal">
+        <span class="step-num">02</span>
+        <div class="step-icon">&#128172;</div>
+        <h3 class="step-title">Code angeben</h3>
+        <p class="step-desc">Kontaktiere den Betify Support per Live-Chat und nenne deinen exklusiven Code:</p>
+        <div class="step-code">SUCHTYZ</div>
+      </div>
+      <div class="step-card reveal">
+        <span class="step-num">03</span>
+        <div class="step-icon">&#127881;</div>
+        <h3 class="step-title">Freebet erhalten</h3>
+        <p class="step-desc">Dein Freebet Bonus wird innerhalb weniger Minuten auf dein Konto gutgeschrieben. Viel Erfolg!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="bottom-cta" id="cta">
+  <div class="bottom-cta-inner">
+    <div class="bottom-cta-text">
+      <h2 class="section-title reveal">WARTE NICHT<br>ZU LANGE!</h2>
+      <p class="reveal">Dieses exklusive Angebot gilt nur f&uuml;r Suchtyz Mitglieder und ist zeitlich begrenzt. Sichere dir jetzt deinen 100% Freebet Bonus, bevor die Zeit abl&auml;uft.</p>
+      <a href="#" class="cta-btn reveal">
+        JETZT BONUS SICHERN
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="bottom-cta-image reveal">
+      <img src="ressources/photo_2026-03-11-13.04.27.jpeg" alt="Suchtyz Crew">
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="age-badge">18+</div>
+  <p>
+    Gl&uuml;cksspiel kann s&uuml;chtig machen. Spiele verantwortungsvoll. Es gelten die AGB von Betify.
+    Dieses Angebot richtet sich ausschlie&szlig;lich an Personen ab 18 Jahren.
+    Freebet-Bedingungen und Umsatzanforderungen entnehmen Sie bitte den vollst&auml;ndigen Teilnahmebedingungen.
+    <br><br>
+    &copy; 2026 Betify x Suchtyz &mdash; Alle Rechte vorbehalten.
+  </p>
+</footer>
+
+<script>
+// ======== COUNTDOWN TIMER (March 14, 2026 13:00–21:00 CET) ========
+(function(){
+  // Start: 13:00 CET (UTC+1) — End: 21:00 CET (UTC+1) = 8 hours
+  const startTime = new Date('2026-03-14T13:00:00+01:00').getTime();
+  const endTime   = new Date('2026-03-14T21:00:00+01:00').getTime();
+  const duration  = endTime - startTime; // 8 hours
+
+  const hEl = document.getElementById('cd-h');
+  const mEl = document.getElementById('cd-m');
+  const sEl = document.getElementById('cd-s');
+
+  function pad(n){ return String(n).padStart(2,'0') }
+
+  function tick(){
+    const now = Date.now();
+    let diff;
+    if (now < startTime) {
+      diff = duration; // Before start: show full 8 hours
+    } else {
+      diff = Math.max(0, endTime - now);
+    }
+    const totalSec = Math.floor(diff / 1000);
+    const h = Math.floor(totalSec / 3600);
+    const m = Math.floor((totalSec % 3600) / 60);
+    const s = totalSec % 60;
+    hEl.textContent = pad(h);
+    mEl.textContent = pad(m);
+    sEl.textContent = pad(s);
+    if (now >= endTime) {
+      clearInterval(timer);
+      document.querySelector('.countdown-label').textContent = 'ANGEBOT ABGELAUFEN';
+    }
+  }
+  tick();
+  const timer = setInterval(tick, 1000);
+})();
+
+// ======== FLOATING MONEY PARTICLES ========
+(function(){
+  const emojis = ['\uD83D\uDCB5','\uD83D\uDCB0','\uD83D\uDCB6','\uD83E\uDE99','\uD83D\uDCB8'];
+  const container = document.body;
+  for (let i = 0; i < 12; i++){
+    const el = document.createElement('div');
+    el.classList.add('money-float');
+    el.textContent = emojis[Math.floor(Math.random()*emojis.length)];
+    el.style.left = Math.random()*100 + 'vw';
+    el.style.animationDuration = (12 + Math.random()*18) + 's';
+    el.style.animationDelay = (Math.random()*15) + 's';
+    el.style.fontSize = (.8 + Math.random()*1.2) + 'rem';
+    container.appendChild(el);
+  }
+})();
+
+// ======== SCROLL REVEAL ========
+(function(){
+  const els = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if(e.isIntersecting){
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    els.forEach(el => observer.observe(el));
+  } else {
+    // Fallback: show all immediately if IntersectionObserver not supported
+    els.forEach(el => el.classList.add('visible'));
+  }
+  // Safety net: ensure all reveals are visible after 3s no matter what
+  setTimeout(() => els.forEach(el => el.classList.add('visible')), 3000);
+})();
+
+// ======== CTA ARROW SVG FIX ========
+document.querySelectorAll('.cta-btn svg').forEach(svg => {
+  svg.setAttribute('fill','none');
+  svg.setAttribute('stroke','currentColor');
+  svg.setAttribute('stroke-width','2.5');
+  svg.setAttribute('stroke-linecap','round');
+  svg.setAttribute('stroke-linejoin','round');
+});
+</script>
+</body>
+</html>
